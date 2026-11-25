@@ -1,7 +1,6 @@
 # Raw photos: each sprint copies the chosen ones into images/ under clean names
 picturesforwebsite/
 # Local tooling
-.claude/
 .impeccable/
 .superpowers/
 docs/superpowers/
