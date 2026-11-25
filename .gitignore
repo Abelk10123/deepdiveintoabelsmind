@@ -5,3 +5,6 @@ picturesforwebsite/
 .impeccable/
 .superpowers/
 docs/superpowers/
+# Local sprint plan for scheduled runs (has local paths)
+docs/sprints.md
+docs/travel-captions.md
