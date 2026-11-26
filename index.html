@@ -27,10 +27,9 @@ a:hover{color:var(--accent)}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;background:#fff;padding:10px 14px;z-index:10}
 
-/* photo slots: a neutral frame until the file in images/ exists */
+/* photo frame */
 .ph{margin:0;background:var(--soft);overflow:hidden;position:relative}
 .ph img{display:block;width:100%;height:100%;object-fit:cover}
-.ph:empty::after{content:attr(data-slot);position:absolute;inset:auto 0 12px;text-align:center;font:500 13px Archivo,sans-serif;color:var(--muted)}
 
 /* masthead */
 .top{border-bottom:2px solid var(--line)}
@@ -57,11 +56,8 @@ h3{font-size:22px;font-weight:700;line-height:1.3;margin:0;letter-spacing:-.01em
 ul.plain{margin:12px 0 0;padding-left:1.1em}
 ul.plain li{margin:6px 0}
 
-.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
 .about p{margin:0 0 1em;max-width:62ch}
 .about p:first-child{font-size:24px;line-height:1.45}
-.about .pics{display:grid;gap:16px}
-.about .ph{aspect-ratio:4/3}
 
 .rows>*{padding:28px 0;border-bottom:1px solid var(--soft)}
 .rows>*:first-child{padding-top:0}
@@ -79,9 +75,16 @@ ul.plain li{margin:6px 0}
 .stack dt{font:700 14px Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}
 .stack dd{margin:6px 0 0}
 
-.hobbies{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:0;padding:0;list-style:none}
-.hobbies .ph{aspect-ratio:3/4}
-.hobbies span{display:block;font:700 15px Archivo,sans-serif;margin-top:10px}
+.hobbies{display:flex;flex-wrap:wrap;gap:10px 40px;margin:0;padding:0;list-style:none;font:700 20px Archivo,sans-serif}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0;padding:0;list-style:none}
+.gallery li{aspect-ratio:1}
+.gallery .ph{height:100%}
+
+.cv-actions{margin:16px 0 0;font:700 15px Archivo,sans-serif}
+.cv-actions a{display:inline-block;padding:10px 0;border-bottom:2px solid var(--accent);text-decoration:none}
+.cv-frame{display:block;width:100%;height:min(80vh,900px);margin-top:16px;border:1px solid var(--soft)}
+.note{font:500 14px/1.6 Archivo,sans-serif;color:var(--muted)}
 
 footer{border-top:2px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-top:28px;padding-bottom:40px;font:500 14px Archivo,sans-serif;color:var(--muted)}
@@ -90,16 +93,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
   .hero .wrap{grid-template-columns:1fr;gap:36px;padding-top:40px}
   .hero .ph{max-width:420px}
   section>.wrap{grid-template-columns:1fr;gap:24px;padding-top:40px;padding-bottom:56px}
-  .about{grid-template-columns:1fr}
-  .about .pics{grid-template-columns:1fr 1fr}
-  .hobbies{grid-template-columns:repeat(3,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:600px){
   .top nav{display:none}
   .job{grid-template-columns:1fr;gap:4px}
   .proj{grid-template-columns:1fr;gap:6px}
   .stack{grid-template-columns:1fr}
-  .hobbies{grid-template-columns:repeat(2,1fr)}
   .about p:first-child{font-size:21px}
 }
 </style>
@@ -131,10 +131,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
       <ul class="links">
         <li><a href="https://www.linkedin.com/in/abel-k-1192822a4/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr"> (opens in new tab)</span></a></li>
         <li><a href="https://github.com/Abelk10123" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span><span class="sr"> (opens in new tab)</span></a></li>
-        <li><a href="mailto:psyak23@nottingham.ac.uk">psyak23@nottingham.ac.uk</a></li>
+        <li><a href="mailto:abelkokkattu@gmail.com">abelkokkattu@gmail.com</a></li>
       </ul>
     </div>
-    <figure class="ph" data-slot="images/portrait.jpg"><img src="images/portrait.jpg" alt="Abel Kokkattu" width="800" height="1000" fetchpriority="high" onerror="this.remove()"></figure>
+    <figure class="ph"><img src="images/portrait.jpg" alt="Abel Kokkattu" width="1199" height="1500" fetchpriority="high"></figure>
   </div>
 </div>
 
@@ -146,11 +146,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
       <div>
         <p>I’m a third-year Computer Science student at the University of Nottingham, and I spent spring 2026 on exchange at the Ningbo campus in China.</p>
         <p>Most of my working life so far has been face to face with people: on the customer service desk at Morrisons, and now stewarding matchdays for crowds of around 30,000. Last summer I joined Propmarker as a software developer intern, cleaning property data and tracking down API mismatches.</p>
-        <p>That mix is why I’m aiming for technology sales and consulting. Those roles need someone who understands a product properly and can explain it clearly to the person buying it. When I’m not at a screen I’m boxing, training calisthenics or doing yoga, and I travel whenever I get the chance.</p>
-      </div>
-      <div class="pics">
-        <figure class="ph" data-slot="images/about-1.jpg"><img src="images/about-1.jpg" alt="" width="800" height="600" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="ph" data-slot="images/about-2.jpg"><img src="images/about-2.jpg" alt="" width="800" height="600" loading="lazy" onerror="this.remove()"></figure>
+        <p>That mix is why I’m aiming for technology sales and consulting. Those roles need someone who understands a product properly and can explain it clearly to the person buying it. When I’m not at a screen I’m playing badminton or table tennis, meditating, or travelling whenever I get the chance.</p>
       </div>
     </div>
   </div>
@@ -164,7 +160,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
         <div class="when">Jul – Aug 2026</div>
         <div>
           <h3>Software Developer Intern</h3>
-          <p class="meta">Propmarker</p>
+          <p class="meta">Propmarker · <a href="cv/Internship_Certificate.pdf" target="_blank" rel="noopener">View certificate<span class="sr"> (PDF, opens in new tab)</span></a></p>
           <ul class="plain">
             <li>Cleaned and validated property datasets with Python, Pandas and SQL for API and analytics use.</li>
             <li>Supported custom REST API integrations, using Postman to investigate data mismatches and write up reproducible issues.</li>
@@ -216,49 +212,61 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
       <article class="proj">
         <div class="n" aria-hidden="true">01</div>
         <div>
-          <h3>AI customer-enquiry triage <span class="status">In progress</span></h3>
-          <p>How could a small property business sort incoming enquiries with AI and still keep staff in control? So far I’ve written the brief, built a synthetic dataset, set up the Streamlit starter and made a first business-case model. Next comes LLM classification, a staff-review queue, an accuracy evaluation and a cost comparison.</p>
-          <p class="tech">Python · Streamlit · Pandas · planned: LLM API, SQLite, Plotly, pytest</p>
+          <h3>Transactional conversational AI system <span class="status">In progress</span></h3>
+          <p class="meta">University of Nottingham · COMP3074 · Oct–Dec 2026</p>
+          <p>I’m building a conversational AI system for my Human-AI Interaction module. It looks at how a natural-language interface can help people finish practical tasks, such as making a reservation or a service request. The coursework covers intent recognition, multi-turn dialogue, conversational context, error handling and user-centred design.</p>
+          <p>I’ll also evaluate its usability and performance and present it in a narrated demo. I’m interested in how conversational AI can make services easier to use, and how to judge it against what users really need.</p>
+          <p class="tech">Python · Natural language processing · Conversational design · Usability evaluation</p>
+          <p class="note">University coursework, code is private and available on request.</p>
         </div>
       </article>
       <article class="proj">
         <div class="n" aria-hidden="true">02</div>
         <div>
-          <h3>B2B account prioritisation &amp; CRM tool <span class="status">In progress</span></h3>
-          <p>A sales-workflow tool for a fictional property-data API supplier. It scores accounts against an ideal customer profile, explains every score, and links each account to a next action. The brief, scoring rubric, discovery questions and synthetic data are done. Editable scoring, a pipeline dashboard and HubSpot sync come next.</p>
-          <p class="tech">Python · Streamlit · Pandas · planned: HubSpot CRM API, Postman, SQLite</p>
+          <h3>Android walking tour guide <span class="status">In progress</span></h3>
+          <p class="meta">University of Nottingham · COMP3018 · Autumn 2026</p>
+          <p>An Android audio-guide app for my Mobile Device Programming module. Users pick and play audio for each tour stop, keep bookmarks and change playback settings. The brief also covers background playback with Android Services and an optional GPS feature that switches the audio as you reach a stop.</p>
+          <p>It’s about app architecture, managing state and keeping the experience reliable as people move between screens and other apps.</p>
+          <p class="tech">Android · Activities · Services · App lifecycle · Location services</p>
+          <p class="note">University coursework, code is private and available on request.</p>
         </div>
       </article>
       <article class="proj">
         <div class="n" aria-hidden="true">03</div>
         <div>
-          <h3>EV decision support platform</h3>
-          <p>A nine-person team project. The app helps drivers decide whether an electric vehicle suits their budget, mileage and charging access. It covers personalised recommendations, cost and emissions comparisons against petrol and diesel, and charging-point maps from Open Charge Map, with pytest tests that mock the APIs.</p>
-          <p class="tech">Python · Streamlit · Pandas · Plotly · Folium · SQLite · pytest · code on request</p>
+          <h3>B2B account prioritisation &amp; CRM tool <span class="status">In progress</span></h3>
+          <p class="meta">Personal project · Oct 2026 – now</p>
+          <p>A Python prototype that explores how a business can prioritise potential customers with transparent scoring and structured account data. The business case is a fictional B2B property-data supplier. Planned features are customer-fit scoring, opportunity tracking, account planning and CRM integration.</p>
+          <p>I want to understand how sales teams can use data to find suitable opportunities, organise their pipeline and connect customer needs to the value of a technical product.</p>
+          <p class="tech">Python · Streamlit · Data analysis · CRM workflow design</p>
         </div>
       </article>
       <article class="proj">
         <div class="n" aria-hidden="true">04</div>
         <div>
-          <h3>Cyborg Platformer: legacy refactor</h3>
-          <p>I moved a legacy Java Swing game to a JavaFX MVC architecture across several releases, using a Swing–JavaFX bridge so the old behaviour kept working. The refactoring was incremental, with JUnit tests running under headless CI.</p>
-          <p class="tech">Java 17 · JavaFX · JUnit 5 · Maven · code on request</p>
+          <h3>AI customer-enquiry triage <span class="status">In progress</span></h3>
+          <p class="meta">Personal project · Aug 2026 – now</p>
+          <p>A customer-service prototype that explores how AI could help a team categorise and review incoming enquiries. It focuses on classification, validation and staff oversight, and on weighing the cost against the likely benefit of automating enquiry handling.</p>
+          <p>The aim is to see how AI can support customer service while keeping its decisions understandable and reviewable by staff.</p>
+          <p class="tech">Python · Streamlit · AI integration · Workflow design · Evaluation</p>
         </div>
       </article>
       <article class="proj">
         <div class="n" aria-hidden="true">05</div>
         <div>
-          <h3>Operating systems &amp; concurrency simulator</h3>
-          <p>An OS simulator in C with thread-safe blocking and non-blocking queues, CPU and environment threads, and deterministic logging for testing concurrent code.</p>
-          <p class="tech">C · POSIX threads · code on request</p>
+          <h3>EV decision support platform</h3>
+          <p class="meta">Team project · code on request</p>
+          <p>A nine-person team project. The app helps drivers decide whether an electric vehicle suits their budget, mileage and charging access. It covers personalised recommendations, cost and emissions comparisons against petrol and diesel, and charging-point maps from Open Charge Map, with pytest tests that mock the APIs.</p>
+          <p class="tech">Python · Streamlit · Pandas · Plotly · Folium · SQLite · pytest</p>
         </div>
       </article>
       <article class="proj">
         <div class="n" aria-hidden="true">06</div>
         <div>
-          <h3>SaaS quote calculator</h3>
-          <p>A small command-line tool that prices a SaaS deal. It takes seat count and list price, applies tiered volume discounts, and prints the final breakdown.</p>
-          <p class="tech">Python</p>
+          <h3>Operating systems &amp; concurrency simulator</h3>
+          <p class="meta">Private repo · code on request</p>
+          <p>An OS simulator in C with thread-safe blocking and non-blocking queues, CPU and environment threads, and deterministic logging for testing concurrent code.</p>
+          <p class="tech">C · POSIX threads</p>
         </div>
       </article>
     </div>
@@ -283,27 +291,48 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
   <div class="wrap">
     <h2 id="out-h">Outside work</h2>
     <ul class="hobbies">
-      <li><figure class="ph" data-slot="images/boxing.jpg"><img src="images/boxing.jpg" alt="" width="600" height="800" loading="lazy" onerror="this.remove()"></figure><span>Boxing</span></li>
-      <li><figure class="ph" data-slot="images/calisthenics.jpg"><img src="images/calisthenics.jpg" alt="" width="600" height="800" loading="lazy" onerror="this.remove()"></figure><span>Calisthenics</span></li>
-      <li><figure class="ph" data-slot="images/yoga.jpg"><img src="images/yoga.jpg" alt="" width="600" height="800" loading="lazy" onerror="this.remove()"></figure><span>Yoga</span></li>
-      <li><figure class="ph" data-slot="images/music.jpg"><img src="images/music.jpg" alt="" width="600" height="800" loading="lazy" onerror="this.remove()"></figure><span>Music</span></li>
-      <li><figure class="ph" data-slot="images/travel.jpg"><img src="images/travel.jpg" alt="" width="600" height="800" loading="lazy" onerror="this.remove()"></figure><span>Travelling</span></li>
+      <li>Badminton</li>
+      <li>Table Tennis</li>
+      <li>Travelling</li>
+      <li>Meditation</li>
     </ul>
   </div>
 </section>
 
-<!-- Skeleton (v0.1.0): filled in the content sprint -->
 <section id="travels" aria-labelledby="trav-h">
   <div class="wrap">
     <h2 id="trav-h">Travels</h2>
-    <div><p>Photos from places I’ve been, with a line on each. Coming soon.</p></div>
+    <div>
+    <ul class="gallery">
+      <li><figure class="ph"><img src="images/travel-01.jpg" alt="A city skyline with tall towers across a stretch of water at dusk" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-02.jpg" alt="A cable car line above snow-covered mountains and a glacier" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-03.jpg" alt="Snowy mountain peaks seen past a cable car mast, with a red train below" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-04.jpg" alt="A busy street at night lit by bright neon signs" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-05.jpg" alt="A wide empty road at sunrise lined with city buildings" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-06.jpg" alt="A road with a cycle lane, the sun low behind the buildings" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-07.jpg" alt="A table with a charcoal grill and plates of sliced meat" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-08.jpg" alt="A hot pot on a wooden table surrounded by side dishes" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-09.jpg" alt="A rice bowl and small side dishes on a red counter" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-10.jpg" alt="A bamboo tray with bowls of rice and stewed dishes" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-11.jpg" alt="A tray of chips and a toasted sandwich wrapped in foil" loading="lazy" decoding="async"></figure></li>
+      <li><figure class="ph"><img src="images/travel-12.jpg" alt="Two pastries and an iced green drink on a table" loading="lazy" decoding="async"></figure></li>
+    </ul>
+    </div>
   </div>
 </section>
 
 <section id="cv" aria-labelledby="cv-h">
   <div class="wrap">
     <h2 id="cv-h">CV</h2>
-    <details><summary>Preview my CV</summary><p>CV preview coming soon.</p></details>
+    <div>
+      <p class="cv-actions"><a href="cv/Abel_Kokkattu_CV.pdf" download>Download my CV (PDF)</a></p>
+      <details>
+        <summary>Preview my CV</summary>
+        <object class="cv-frame" data="cv/Abel_Kokkattu_CV.pdf" type="application/pdf" aria-label="My CV as a PDF">
+          <p>Your browser can’t show the PDF here. <a href="cv/Abel_Kokkattu_CV.pdf" download>Download my CV (PDF)</a>.</p>
+        </object>
+      </details>
+    </div>
   </div>
 </section>
 </main>
@@ -311,7 +340,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
 <footer>
   <div class="wrap">
     <span>Abel Kokkattu</span>
-    <span><a href="https://www.linkedin.com/in/abel-k-1192822a4/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Abelk10123" target="_blank" rel="noopener">GitHub</a> · <a href="mailto:psyak23@nottingham.ac.uk">Email</a></span>
+    <span><a href="https://www.linkedin.com/in/abel-k-1192822a4/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Abelk10123" target="_blank" rel="noopener">GitHub</a> · <a href="mailto:abelkokkattu@gmail.com">Email</a></span>
   </div>
 </footer>
 </body>
