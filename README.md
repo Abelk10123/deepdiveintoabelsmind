@@ -10,6 +10,28 @@ It's one static HTML page with inline CSS. There's no framework and no build ste
 
 ## Patch notes
 
+### v0.2.0: Sprint 2, content (26 Nov 2026)
+
+**Added**
+- Projects rebuilt: the four current projects (two University of Nottingham modules, two personal) all marked "In progress". The coursework ones say the code is private and available on request.
+- Travels gallery with 12 photos. They have no captions yet, so none are shown.
+- CV as a PDF, with a preview on the page and a download link. My phone number is removed from it.
+- Internship completion letter, linked from the Propmarker entry.
+- New portrait photo on the landing page.
+
+**Changed**
+- Contact email is now abelkokkattu@gmail.com everywhere.
+- Outside work is text only: Badminton, Table Tennis, Travelling, Meditation. The About me sentence matches.
+- Removed the empty photo slots from About me and Outside work.
+- Projects list is now the four current ones plus the EV platform and the OS simulator, which are on my CV. The Cyborg Platformer and SaaS quote calculator entries are gone because they aren't on my CV.
+
+**Known issues**
+- The About me copy is still a draft.
+- Travel photos have no captions (waiting on `docs/travel-captions.md`).
+- The CV's own Hobbies line still lists the old hobbies.
+
+---
+
 ### v0.1.0: Sprint 1, skeleton (25 Nov 2026)
 
 **Added**
