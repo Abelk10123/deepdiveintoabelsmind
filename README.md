@@ -10,6 +10,25 @@ It's one static HTML page with inline CSS. There's no framework and no build ste
 
 ## Patch notes
 
+### v0.3.0: Sprint 3, design (27 Nov 2026)
+
+**Added**
+- Open Graph and Twitter tags that point at the live site URL, plus a canonical link and a favicon.
+- Width and height on every photo, so the page doesn't jump while images load.
+- Section links now stop a little short of the top edge when you jump to them.
+
+**Changed**
+- Navigation is no longer hidden on phones. It wraps onto two lines at the top.
+- "Preview my CV" is now a proper button, and the preview is shorter on small screens.
+- Gallery photos react slightly on hover, and the text avoids single words on the last line.
+- Portrait alt text is more descriptive, and the AK link says where it goes.
+
+**Known issues**
+- Travel photos still have no captions.
+- The About me copy is still a draft.
+
+---
+
 ### v0.2.0: Sprint 2, content (26 Nov 2026)
 
 **Added**

@@ -1,9 +1,5 @@
 # Raw photos: each sprint copies the chosen ones into images/ under clean names
 picturesforwebsite/
-# Local tooling
-.impeccable/
-.superpowers/
-docs/superpowers/
 # Local sprint plan for scheduled runs (has local paths)
 docs/sprints.md
 docs/travel-captions.md
