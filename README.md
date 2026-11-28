@@ -10,6 +10,31 @@ It's one static HTML page with inline CSS. There's no framework and no build ste
 
 ## Patch notes
 
+The full history, newest first. Every version shipped as its own pull request.
+
+### v1.0.0: Sprint 4, release (28 Nov 2026)
+
+This is the first full release. Nothing new on the page. This sprint was a final check of everything from v0.1.0 to v0.3.0.
+
+**Checked**
+- Links: LinkedIn, GitHub, the mailto link, the CV PDF and the internship letter are all in place and point at the right addresses. GitHub answers. LinkedIn blocks automated checks, so I couldn't confirm that one by machine.
+- My phone number isn't anywhere in the repo, including the text inside the CV PDF. The internship letter is a scan with no text layer, so that one needs a quick look by eye.
+- The only email on the site is abelkokkattu@gmail.com.
+- No links to private repos. The two university projects say the code is private and available on request.
+- All 13 photos have alt text, a width and a height. None are over 1600px on the long side and none carry EXIF data.
+- No tracked file mentions the tools I used to build it, and there are no hidden characters in the HTML or Markdown.
+
+**Changed**
+- Patch notes are now the full history, and the roadmap shows all four versions.
+
+**Known issues**
+- Travel photos have no captions yet. I'd rather show nothing than guess.
+- The About me copy is still a draft.
+- The CV PDF's own Hobbies line still lists the old hobbies. The site itself is right.
+- I couldn't test the page in a browser at 1440, 390 and 320px, or read the console, during the release run. The mobile check in v0.3.0 still stands. Worth a quick look once it's live.
+
+---
+
 ### v0.3.0: Sprint 3, design (27 Nov 2026)
 
 **Added**
@@ -75,5 +100,7 @@ It's one static HTML page with inline CSS. There's no framework and no build ste
 | v0.2.0 | 2. Content | Thu 26 Nov, 21:30 | Contacts, hobbies, projects, travel gallery, CV preview |
 | v0.3.0 | 3. Design | Fri 27 Nov, 17:00 | Final design touches and an accessibility pass |
 | v1.0.0 | 4. Release | Sat 28 Nov | Final checks and full patch notes |
+
+After merging, tag `v1.0.0` on `main`.
 
 Every sprint ships as a pull request. Nothing reaches the live site until I've reviewed and merged it.
